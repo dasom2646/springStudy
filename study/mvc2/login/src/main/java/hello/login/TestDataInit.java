@@ -15,6 +15,7 @@ public class TestDataInit {
 
     private final ItemRepository itemRepository;
     private  final MemberRepository memberRepository;
+
     /**
      * 테스트용 데이터 추가
      */
