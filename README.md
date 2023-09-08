@@ -100,8 +100,25 @@ HTTP 캐시와 관련된 주요 개념 및 헤더를 다룸.
 웹 애플리케이션과 관련된 핵심 개념과 기술 설명.
 웹 서버, 웹 애플리케이션 서버 그리고 서블릿의 특징과 서블릿 HTTP 요청과 응답 흐름에 대한 설명, HTML, HTTP API, CSR, SSR, 자바 백엔드 웹 기술 역사에 대해서 학습.
 
+**서블릿**: 자바 웹 애플리케이션 개발에 사용되는 서버 사이드 컴포넌트로, 클라이언트의 요청을 처리하고 동적 콘텐츠를 생성.  
+**HTML (HyperText Markup Language)** : 웹 페이지의 구조와 콘텐츠를 정의하는 마크업 언어.  
+**HTTP API (Application Programming Interface)** : HTTP 프로토콜을 기반으로 데이터를 주고받는 인터페이스로, RESTful API 등이 포함.
+
+**CSR (Client-Side Rendering) vs. SSR (Server-Side Rendering)** :
+- CSR: 클라이언트 측에서 동적으로 콘텐츠를 렌더링하는 방식. 클라이언트에서 JavaScript를 사용하여 데이터를 받아오고 화면에 표시.  
+- SSR: 서버에서 초기 페이지 렌더링을 수행하고, 클라이언트로 전송되는 페이지가 완전한 HTML 문서. 이후 클라이언트 측 JavaScript가 활성화되어 동적 상호 작용이 가능.
+
 #### 섹션 2. 서블릿
-HttpServletRequest 개요와 제공하는 기본기능, HTTP 요청 데이터, HTTP message body, HTTP 응답 데이터의 종류와 설명
+HttpServletRequest 개요와 제공하는 기본기능, HTTP 요청 데이터, HTTP message body, HTTP 응답 데이터의 종류와 설명.  
+
+**HttpServletRequest (HTTP 요청 객체)** :
+- HttpServletRequest는 클라이언트로부터 받은 HTTP 요청 정보를 담고 있는 객체.
+- 주요 메서드와 기능:
+  - getRequestURI(): 요청된 URI를 반환함. 
+  - getMethod(): HTTP 메서드(GET, POST, 등)를 반환함.  
+  - getParameter(name): 요청 파라미터의 값을 가져옴.  
+  - getHeader(name): 요청 헤더의 값을 가져옴.
+  - getSession(): 세션 관리를 위한 세션 객체를 가져옴.
 
 #### 섹션 3. 서블릿, JSP, MVC 패턴
 MVC 패턴 개요,M VC 패턴1과MVC 패턴2의 설명과 적용 방법 그리고 한계 와  MVC 컨트롤러의 단점에 대해 알려줌.
@@ -114,9 +131,24 @@ MVC 패턴 개요,M VC 패턴1과MVC 패턴2의 설명과 적용 방법 그리�
 직접 만든 MVC 프레임워크와 스프링 MVC를 비교하면서 스프링 MVC 애플리케이션의 구조와 각 요소의 역할 학습.
 스프링 MVC 구조와 동작 과정, 스프링 MVC 애플리케이션 구조의 설명.
 
+**MVC 아키텍처**
+**Model** : 비즈니스 로직과 데이터 처리를 담당하는 부분
+**View** : 클라이언트에게 결과를 보여주는 역할
+**Controller** : 클라이언트의 요청을 처리하고 Model과 View를 연결하는 역할
+
+
 #### 섹션 6. 스프링 MVC - 기본 기능
 스프링 MVC에서 제공하는 주요 기능과 개념을 다루고, 실제 코드를 통해 이를 적용하는 방법을 배움.  
 HandlerMapping과 Controller, ModelAndView와 ViewResolver, 뷰 템플릿 엔진 (JSP, Thymeleaf), 정적 리소스 처리, 모델 데이터 전달, 세션과 쿠키등 기본 기능을 이해하고 활용하여 스프링 MVC를 사용하여 웹 애플리케이션을 개발하는 데 필요한 기초를 다짐. 
+
+**HandlerMapping과 Controller** :
+- HandlerMapping은 요청 URL을 컨트롤러에 매핑.
+- Controller는 요청을 처리하고 비즈니스 로직을 수행.
+- @Controller 어노테이션을 사용하여 컨트롤러를 정의하고 @RequestMapping을 사용하여 URL 매핑 지정.
+
+**ModelAndView와 ViewResolver** :
+- ModelAndView를 사용하여 컨트롤러의 처리 결과와 뷰 이름을 함께 반환.
+- ViewResolver는 뷰 이름을 실제 뷰 객체로 변환.
 
 #### 섹션 7. 스프링 MVC - 웹 페이지 만들기
 웹 페이지를 구성하고 컨트롤러, 뷰, 모델을 통합하여 동작하는 웹 애플리케이션을 개발하는 방법을 다룸. 
